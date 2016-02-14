@@ -2,10 +2,12 @@
 <html>
     
     {% set site_title = getSetting('site_name')%}
+    {% set default_title = 'Beach volley mastery' %}
     {% set site_description = getSetting('site_description')%}
+    {% set default_description = 'The journey to athletic mastery' %}
     
 	<head>
-		<title>{% block title %}{{ site_title|default('Beach Volley') }}{% endblock %}</title>
+		<title>{% block title %}{{ site_title|default(default_title) }}{% endblock %}</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
         
@@ -13,7 +15,7 @@
         <link rel="shortcut icon" href="/static/favicon.png" type="image/x-icon">
         <link rel="icon" href="/static/favicon.png" type="image/x-icon">
         
-        <meta name="description" content="{% block description %}{{ site_description|default('The journey to athletic mastery') }}{% endblock %}">    
+        <meta name="description" content="{% block description %}{{ site_description|default(default_description) }}{% endblock %}">    
     {% block head_extra %}{% endblock %}
         
         
@@ -21,4 +23,17 @@
 		<link rel="stylesheet" href="/static/dopetrope/assets/css/main.css" />
         <link rel="stylesheet" href="/static/dopetrope_overrides.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="/static/dopetrope/assets/css/ie8.css" /><![endif]-->
+        
+        <!-- for Facebook -->          
+        <meta property="og:title" content="{% block title %}{{ site_title|default(default_title) }}{% endblock %}" />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content="" />
+        <meta property="og:description" content="{% block description %}{{ site_description|default(default_description) }}{% endblock %}" />
+
+        <!-- for Twitter -->          
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="{% block title %}{{ site_title|default(default_title) }}{% endblock %}" />
+        <meta name="twitter:description" content="{% block description %}{{ site_description|default(default_description) }}{% endblock %}" />
+        <meta name="twitter:image" content="" />
+        
 	</head>
