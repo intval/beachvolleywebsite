@@ -1,0 +1,43 @@
+{% include "templates/partials/header.html" %}
+
+
+
+	<body class="homepage">
+
+        <div class="headerContainer">
+            <h1>
+                <a href="/">{% block pageheader %}The Journey To The Olympics{% endblock %}</a>
+                <span class="subheader">Becoming the best athlete you can</span>
+            </h1>
+        </div>
+
+        <div id="page-wrapper">
+    
+            {% block content %}
+            
+            {% endblock %}
+            
+		</div>
+
+		<!-- Scripts -->
+        <script src="/static/dopetrope/assets/js/jquery.min.js"></script>
+        <script src="/static/dopetrope/assets/js/jquery.dropotron.min.js"></script>
+        <script src="/static/dopetrope/assets/js/skel.min.js"></script>
+        <script src="/static/dopetrope/assets/js/skel-viewport.min.js"></script>
+        <script src="/static/dopetrope/assets/js/util.js"></script>
+        <!--[if lte IE 8]><script src="/static/dopetrope/assets/js/ie/respond.min.js"></script><![endif]-->
+        <script src="/static/dopetrope/assets/js/main.js"></script>
+
+        
+         {% block scripts_extra %}{% endblock %}
+
+      
+      <script>
+        var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src='//www.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+      </script>
+        
+	</body>
+</html>    

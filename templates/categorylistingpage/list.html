@@ -1,0 +1,54 @@
+
+{% block content %}
+
+<!-- List of blog posts -->
+<div id="main-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="12u">
+
+                <!-- Latest blog posts -->
+                    <section>
+                        <header class="major">
+                            <h2>{{ listingTitle|default('Latest Posts') }}</h2>
+                        </header>
+                        <div class="row">
+{# Next we sort the data by publish_date. The true bit reverses it so it's newest first. Learn more: #}
+{# http://www.webhook.com/docs/template-rules-and-filters/#sortproperty_reverseorder #}
+{% set data = data|sort('publish_date', true) %}
+
+{# This is how you set pagination. It's always important to do this after your sort. #}
+{% set data = paginate(data, 6) %}
+
+                              
+                                {% for object in data %}
+                                    
+                                  <div class="4u 12u(mobile)">
+                                     <section class="box">
+                                         <!--
+                                        <a href="{{ url(object) }}" class="image featured">
+                                            <img src="static/dopetrope/images/pic02.jpg" alt="" /></a>
+                                            -->
+                                        <header>
+                                            <h3><a href="{{ url(object) }}">{{ object.name }}</a></h3>
+                                        </header>
+                                        <p>{{ object.short_description }}</p>
+                                        <footer>
+                                            <a href="{{ url(object) }}" class="button alt">Keep reading</a>
+                                        </footer>
+                                    </section>
+                                </div>
+                                {% endfor %}
+                              
+                        </div>
+                    </section>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+  {# The actual pagination template, feel free to edit or replace the default one. 
+  {% include "templates/partials/paginator.html" %} #}
+
+{% endblock %}

@@ -1,0 +1,12 @@
+
+{% extends "templates/partials/base.html" %}
+
+{% block title %}{{ item.name }}{% endblock %}
+{% block pageheader %}{{ item.name }}{% endblock %}
+{% block content %}
+  
+    {% set listingTitle = 'Everything on ' + item.name %}
+    {% set data = item.blog_posts_relationship %}
+    {% include 'templates/categorylistingpage/list.html' %}
+
+{% endblock %}

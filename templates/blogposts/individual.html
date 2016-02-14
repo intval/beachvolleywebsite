@@ -1,0 +1,57 @@
+
+{% extends "templates/partials/base.html" %}
+
+{% block title %}{{ item.name }}{% endblock %}
+{% block pageheader %}{{ item.name }}{% endblock %}
+{% block content %}
+
+    
+<!-- Header -->
+
+			<!-- Main -->
+				<div id="main-wrapper">
+					<div class="container">
+						<div class="row">
+							<div class="8u 12u(mobile)">
+
+								<!-- Content -->
+									<article class="box post">
+										<header>
+											<h2>{{ item.name }}</h2>
+											<p>{{ item.short_description }}</p>
+										</header>
+										
+                                        {{ item.content|markdown }}
+										
+									</article>
+                                
+                                
+                                <span class='st_facebook_large' displayText='Facebook'></span>
+                                <span class='st_twitter_large' displayText='Tweet'></span>
+                                <span class='st_pinterest_large' displayText='Pinterest'></span>
+                                <span class='st_email_large' displayText='Email'></span>
+                                <span class='st_fblike_large' displayText='Facebook Like'></span>
+                                
+
+							</div>
+							<div class="4u 12u(mobile)">
+
+								<!-- Sidebar -->
+                                {% include "templates/partials/sidebar.html" %}
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<div id="footer-wrapper">
+
+            
+                    
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">stLight.options({publisher: "cb75e7b6-cca7-4460-ac34-f2a9f40527bd", doNotHash: true, doNotCopy: false, hashAddressBar: false});</script>
+
+{% endblock %}
+
+
