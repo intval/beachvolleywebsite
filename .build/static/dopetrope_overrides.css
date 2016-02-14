@@ -1,0 +1,70 @@
+body {background-color: transparent;}
+
+@media screen and (min-width: 737px)
+{
+    
+    #banner {
+        padding: 12em 0 !important;
+        margin:0;
+    }
+    
+    
+    #header-wrapper {   margin-top: 0; padding-top:0; }
+}
+
+#banner {
+    background: url("images/emanuelRegoBanner.jpg");
+}
+
+.main-sections a {
+    color: black;
+    text-decoration: none;
+}
+
+.main-sections a:hover {text-decoration: underline;}
+
+.main-sections .icon {cursor: pointer;}
+
+.headerContainer
+{
+        padding: 4.5em 0 2em 0;
+        position: relative;
+        background: #ffffff;
+        border-bottom: solid 1px #ccc;
+    text-align: center;
+}
+
+.headerContainer h1
+{
+        margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+        color: #252122;
+    font-weight: 900;
+    font-size: 2.5em;
+    letter-spacing: -0.035em;
+    margin: 0 0 1em 0;
+}
+
+.subheader
+{
+    font-size: xx-large;    
+    font-weight: normal;    
+    padding-top: 14px;    
+    display: block;
+}
+
+
+/* hide navigation on mobile, cause navigation menu was empty */
+#titleBar, #navPanel { display: none;}
+
+#footer-wrapper {background-color: black}
+
+
+article.post ul {
+    list-style: initial;
+    margin-left: 30px;
+}
